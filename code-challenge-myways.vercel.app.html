@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #myForm {
+        border: 2px dashed black;
+        width: 40%;
+        padding: 30px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      code {
+        border: 1.25px dashed black;
+        width: 38%;
+        margin-top: 15px;
+        padding: 25px;
+      }
+      input {
+        font-size: 16px;
+        font-size: max(16px, 1em);
+        font-family: inherit;
+        padding: 0.25em 0.5em;
+        border: 0.6px solid black;
+        border-radius: 4px;
+      }
+      label {
+        font-size: 16px;
+        font-size: max(16px, 1em);
+        margin-right: 5px;
+      }
+      button {
+        background-color: #222;
+        border-radius: 4px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin: 0;
+        max-width: none;
+        min-height: 44px;
+        min-width: 10px;
+        outline: none;
+        overflow: hidden;
+        padding: 9px 20px 8px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>MyWays Live Coding Challenge (29th March)</h2>
+    <form id="myForm">
+      <label>Name:</label>
+      <input
+        type="text"
+        id="inp1"
+        placeholder="Samyak Jain"
+        name="name"
+      /><br /><br />
+      <label>Email: </label>
+      <input
+        type="text"
+        id="inp2"
+        placeholder="samyak@myways.ai"
+        name="email"
+      /><br /><br />
+      <label>Answer: </label>
+      <input
+        type="text"
+        id="inp3"
+        placeholder="662"
+        name="answer"
+      /><br /><br />
+      <button type="submit" onclick="submitForm(event)">Submit</button>
+    </form>
+    <code>
+      <p>// Debug The Function & Calculate The Answer</p>
+      <p>const calculateAnswer = (email) =></p>
+      <p>{</p>
+      <p>const [localPart, domain] = emai.split("@");</p>
+      <p>const [hostname, ...countryCodes] = domin.split(".");</p>
+      <p>
+        return `${localPart.length}${hostnme.length}${countryCodes.reduce(
+        (a,cc) => a + cc.length, "") }`;
+      </p>
+      <p></p>
+    </code>
+
+    <h3>Build with 🤟🏻 at <a href="https://myways.ai">MyWays.ai</a></h3>
+    <script>
+      var result = document.getElementById("result");
+      function submitForm(event) {
+        event.preventDefault();
+        const name = document.querySelector("#inp1").value;
+        const email = document.querySelector("#inp2").value;
+        const answer = document.querySelector("#inp3").value;
+
+        const calculateAnswer = (email) =>
+
+        {
+
+          const [localPart, domain] = email.split("@");
+
+          const [hostname, ...countryCodes] = domain.split(".");
+
+          return `${localPart.length}${hostname.length}${countryCodes.reduce( (a,cc) => a + cc.length, "") }`;}
+          console.log(calculateAnswer(email));
+
+        // try {
+        //   fetch("https://test-api-v3.myways.ai/check", {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //       name: name,
+        //       email: email,
+        //       answer: answer,
+        //     }),
+        //   })
+        //     .then((response) => response.json())
+        //     .then((response) => {
+        //       if (response?.message) {
+        //         alert(response?.message);
+        //       } else {
+        //         alert(response?.error);
+        //       }
+        //     });
+        // } catch (error) {
+        //   alert("ERROR");
+        // }
+      }
+    </script>
+  </body>
+</html>
